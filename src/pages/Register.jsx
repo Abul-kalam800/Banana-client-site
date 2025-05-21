@@ -1,6 +1,6 @@
  import React from 'react';
  
- const Signup = () => {
+ const Register = () => {
     return (
         <div>
             <h1>signup</h1>
@@ -8,4 +8,4 @@
     );
  };
  
- export default Signup;
+ export default Register;
