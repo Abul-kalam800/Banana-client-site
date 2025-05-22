@@ -1,23 +1,24 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import {Navigation , Pagination, Autoplay } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import "swiper/css/navigation";
 
 const Banner = () => {
   return (
     <div className="py-5">
       <Swiper
         spaceBetween={50}
-        modules={[Pagination, Autoplay]}
+        modules={[Pagination, Autoplay,Navigation]}
         slidesPerView={1}
         pagination={{ clickable: true }}
         onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-        loop={true}
+        // onSwiper={(swiper) => console.log(swiper)}
         autoplay={{ delay: 3000 }}
         navigation
+        loop={true}
       >
         <SwiperSlide>
           <div className="w-screen h-screen flex justify-center relative">
