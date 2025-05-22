@@ -1,5 +1,6 @@
-import React from "react";
+import React, { use, useContext } from "react";
 import { Link, NavLink } from "react-router";
+import { AuthContex } from "../provider/AuthContex";
 
 const Navbar = () => {
   const links = (
@@ -19,6 +20,9 @@ const Navbar = () => {
     
     </>
   );
+
+  const {email}= useContext(AuthContex)
+  console.log(email)
   return (
     <div>
       <div className="navbar bg-base-100 shadow-sm">
