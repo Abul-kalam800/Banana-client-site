@@ -1,11 +1,15 @@
 import React, { use, useContext } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContex } from "../provider/AuthContex";
+import userImg from "../assets/usser.png";
+import { signOut } from "firebase/auth";
+import { auth } from "../Firebase/firebaseConfig";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContex);
   const links = (
     <>
-      <NavLink to='/'>
+      <NavLink to="/">
         <li>Home</li>
       </NavLink>
       <NavLink>
@@ -17,15 +21,23 @@ const Navbar = () => {
       <NavLink>
         <li>Share a Garden Tip</li>
       </NavLink>
-    
     </>
   );
 
-  const {email}= useContext(AuthContex)
-  console.log(email)
+  console.log(user);
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("signout successfull");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    console.log("logout");
+  };
   return (
     <div>
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -49,37 +61,55 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+              {links}
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">Banana</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 flex gap-6 items-center font-semibold">
-         {links}
-     
-     
+            {links}
           </ul>
         </div>
-        <div className="navbar-end">
-          <Link to='/login' className="btn">Login</Link>
-          <Link to='/register' className="btn">Register</Link>
+
+        <div className="navbar-end flex gap-5">
+          <div>
+            {user ? (
+              <div className="relative group inline-block ">
+              <div>
+                  <img 
+                  className="w-10 bg-red h-10 cursor-pointer"
+                  src={user.photoURL}
+                  alt=""
+                />
+              </div>
+                <h1
+                  className="absolute top-full left-1/2 translate-x-[-50%] mt-2 
+                             text-black  rounded  px-2 py-1 font-bold bg-white
+                            opacity-0 group-hover:opacity-100 transition-opacity duration-300 
+                            whitespace-nowrap z-10"
+                >
+                  {user.displayName}
+                </h1>
+              </div>
+            ) : (
+              <img className="w-10" src={userImg} alt="" />
+            )}
+          </div>
+          {user ? (
+            <button className="cursor-pointer" onClick={handleLogout}>
+              Logout
+            </button>
+          ) : (
+            <>
+              <Link to="/login" className="btn">
+                Login
+              </Link>
+              <Link to="/register" className="btn">
+                Register
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>

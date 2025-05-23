@@ -14,15 +14,15 @@ const Banner = () => {
         modules={[Pagination, Autoplay,Navigation]}
         slidesPerView={1}
         pagination={{ clickable: true }}
-        onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log("slide change")}
+        
         autoplay={{ delay: 3000 }}
         navigation
         loop={true}
       >
         <SwiperSlide>
-          <div className="w-screen h-screen flex justify-center relative">
-            <div className="absolute w-full h-full bg-gray-500 mix-blend-multiply"></div>
+          <div className="w-screen h-[600px]  flex justify-center relative rounded-2xl">
+            <div className="absolute w-full h-full bg-gray-500 mix-blend-multiply rounded-2xl"></div>
             <div className="absolute text-yellow-300 flex flex-col  items-center top-52 justify-center">
               <h1 className=" text-6xl font-semibold tracking-wide">
                 Banana Explore{" "}
@@ -42,8 +42,8 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-screen h-screen flex justify-center relative">
-            <div className="absolute w-full h-full bg-gray-500 mix-blend-multiply"></div>
+          <div className="w-screen h-[600px]  flex justify-center relative rounded-2xl">
+            <div className="absolute w-full h-full bg-gray-500 mix-blend-multiply rounded-2xl"></div>
             <div className="absolute  text-fuchsia-500 flex flex-col  items-center top-52 justify-center">
               <h1 className=" text-6xl  font-semibold tracking-wide">
                 Green view helpfull
@@ -62,8 +62,8 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-screen h-screen flex justify-center relative">
-            <div className="absolute w-full h-full bg-gray-500 mix-blend-multiply"></div>
+          <div className="w-screen h-[600px]  flex justify-center relative rounded-2xl">
+            <div className="absolute w-full h-full bg-gray-500 mix-blend-multiply rounded-2xl "></div>
             <div className="absolute text-red-300 flex flex-col  items-center top-52 justify-center">
               <h1 className=" text-6xl font-semibold tracking-wide">
                 Best fruits for ever 
