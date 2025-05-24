@@ -96,6 +96,7 @@ const SharegardenTips = () => {
               <label className="label">Image url</label>
               <input
                 type="text"
+                name="photo"
                 className="input w-full "
                 placeholder="Images url"
               />
