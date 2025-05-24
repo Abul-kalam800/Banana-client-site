@@ -10,7 +10,7 @@ import { useLoaderData } from 'react-router';
     return (
         <div className='w-11/12 mx-auto'>
             <h2 className='text-center font-semibold my-5 text-3xl'>Our Garden Tip Details</h2>
-          <div className='flex flex-col lg:flex-row justify-center items-center gap-6'>
+          <div className='flex flex-col lg:flex-row justify-center  gap-6'>
             <div className='border bg-green-200'>
                 <img className='mx-auto' src={photo} alt="" />
             </div>
@@ -20,6 +20,7 @@ import { useLoaderData } from 'react-router';
                 <p>Planet: {plant}</p>
                 <p>{Description}</p>
             </div>
+            <button  className='flex-end items-start btn bg-green-300 p-3 rounded-2xl px-5 hover:bg-green-500'>Like</button>
           </div>
 
         </div>

@@ -21,6 +21,9 @@ const Navbar = () => {
       <NavLink to='/sharegardentips'>
         <li>Share a Garden Tip</li>
       </NavLink>
+      <NavLink to='/sharetipsall'>
+        <li> My-tips</li>
+      </NavLink>
     </>
   );
 

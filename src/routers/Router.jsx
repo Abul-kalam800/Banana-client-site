@@ -8,6 +8,7 @@ import SharegardenTips from "../pages/SharegardenTips";
 import Exploregardeners from "../pages/Exploregardeners";
 import BrowesTips from "../pages/BrowesTips";
 import Tipdetails from "../pages/Tipdetails";
+import Mytips from "../pages/Mytips";
 
 export const router = createBrowserRouter([
     {
@@ -38,6 +39,13 @@ export const router = createBrowserRouter([
                 loader: ({params})=> fetch(`http://localhost:3000/sharetips/${params.id}`),
                 Component:Tipdetails
             },
+            {
+                path:'/sharetipsall',
+                loader: ()=> fetch('http://localhost:3000/sharetipsall'),
+                
+                Component:Mytips
+            },
+
             {
                 path:'/login',
                 Component:Login
