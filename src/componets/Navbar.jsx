@@ -12,13 +12,13 @@ const Navbar = () => {
       <NavLink to="/">
         <li>Home</li>
       </NavLink>
-      <NavLink>
+      <NavLink to='/exploreguarden'>
         <li>Explore Gardeners</li>
       </NavLink>
-      <NavLink>
+      <NavLink to='/browestips'>
         <li>Browse Tips</li>
       </NavLink>
-      <NavLink>
+      <NavLink to='/sharegardentips'>
         <li>Share a Garden Tip</li>
       </NavLink>
     </>
