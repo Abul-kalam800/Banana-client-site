@@ -9,6 +9,7 @@ import Exploregardeners from "../pages/Exploregardeners";
 import BrowesTips from "../pages/BrowesTips";
 import Tipdetails from "../pages/Tipdetails";
 import Mytips from "../pages/Mytips";
+import UpdateTips from "../componets/UpdateTips";
 
 export const router = createBrowserRouter([
     {
@@ -30,22 +31,28 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/browestips',
+                hydrateFallbackElement:<span>Loading......</span>,
                 loader:()=>fetch('http://localhost:3000/sharetips'),
                 Component:BrowesTips
 
             },
             {
                 path:'/tipdetails/:id',
+                 hydrateFallbackElement:<span>Loading......</span>,
                 loader: ({params})=> fetch(`http://localhost:3000/sharetips/${params.id}`),
                 Component:Tipdetails
             },
             {
                 path:'/sharetipsall',
-                loader: ()=> fetch('http://localhost:3000/sharetipsall'),
+                 hydrateFallbackElement:<span>Loading......</span>,
+                loader: ()=> fetch('http://localhost:3000/sharetips'),
                 
                 Component:Mytips
             },
-
+              {
+                path:'/updated/:id',
+                Component:UpdateTips
+              },
             {
                 path:'/login',
                 Component:Login

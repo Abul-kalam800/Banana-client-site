@@ -6,10 +6,8 @@ const Mytips = () => {
   const tipsData = useLoaderData();
   console.log(tipsData);
 
-  const handleDelet = e=>{
-    console.log('delet')
 
-  }
+  
   return (
     <div>
       <h1 className="text-3xl text-center font-semibold mt-5">My Own Tips</h1>
@@ -19,19 +17,22 @@ const Mytips = () => {
       </p>
 
       <div className="w-11/12 mx-auto ">
-        <thead className="table flex items-center ml-auto">
-          <tr>
-            <th>Photo</th>
-            <th>Favorite Color</th>
-            <th>Update</th>
-            <th>Delet</th>
-            <th>Details</th>
-           
-          </tr>
-        </thead>
-        {tipsData.map((tips) => (
-          <Singletips tips={tips} handleDelet></Singletips>
-        ))}
+        <table className="w-full mx-auto overflow-x-auto">
+          <thead className="bg-green-300 h-12">
+            <tr className=" text-xl font-semibold">
+              <th>Photo</th>
+              <th>Title</th>
+              <th>Update</th>
+              <th>Delet</th>
+             
+            </tr>
+          </thead>
+            <tbody>
+          {tipsData.map((tips) => (
+            <Singletips key={tips._id} tips={tips} ></Singletips>
+          ))}
+        </tbody>
+        </table>
       </div>
     </div>
   );

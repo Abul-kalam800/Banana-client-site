@@ -15,3 +15,16 @@
 *{
   font-family: "Fira Sans", sans-serif;
 }
+
+
+
+
+tr{
+
+  padding: auto;
+  margin: 10px;
+}
+tr,td{
+
+  padding: 20px;
+}
