@@ -19,6 +19,8 @@ export const router = createBrowserRouter([
             {
                 path:'/',
                 index:true,
+                  hydrateFallbackElement:<span>Loading......</span>,
+                loader:()=>fetch('http://localhost:3000/profiles'),
                 Component:Home
             },
             {
@@ -27,6 +29,8 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/exploreguarden',
+                  hydrateFallbackElement:<span>Loading......</span>,
+                loader:()=>fetch('http://localhost:3000/profiles'),
                 Component:Exploregardeners
             },
             {
@@ -51,6 +55,7 @@ export const router = createBrowserRouter([
             },
               {
                 path:'/updated/:id',
+                loader:({params})=>fetch(`http://localhost:3000/sharetips/${params.id}`),
                 Component:UpdateTips
               },
             {

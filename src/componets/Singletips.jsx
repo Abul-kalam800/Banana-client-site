@@ -25,11 +25,11 @@ const Singletips = ({ tips }) => {
             console.log("after data delet", data);
           });
 
-        // Swal.fire({
-        //   title: "Deleted!",
-        //   text: "Your file has been deleted.",
-        //   icon: "success",
-        // });
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
       }
     });
     console.log("hello", id);

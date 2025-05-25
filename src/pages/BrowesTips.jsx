@@ -10,9 +10,9 @@ const BrowesTips = () => {
     <div>
       <h1 className="text-center text-4xl font-semibold">Browes tips</h1>
 
-      <div className="w-11/12 mx-auto my-20">
-        <table className="w-full">
-          <thead>
+      <div className=" w-11/12  mx-auto my-20 ">
+        <table className="w-full  overflow-x-auto">
+          <thead className="bg-green-300 h-10">
             <tr>
               <th>Photo</th>
               <th>Title</th>

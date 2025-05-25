@@ -19,7 +19,7 @@ const BrowstipsCard = ({ gardentip }) => {
       </td>
 
       <td>
-        <div>
+        <div  className="rounded-xl bg-green-300 lg:p-4 ">
           <Link to={`/tipdetails/${_id}`}>see more</Link>
         </div>
       </td>
