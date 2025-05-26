@@ -13,7 +13,7 @@ const HomeLayout = () => {
       <Navbar></Navbar>
         </nav>
       <Outlet></Outlet>
-      <footer>
+      <footer className='bg-gray-700 '>
         <Footer></Footer>
       </footer>
     </div>

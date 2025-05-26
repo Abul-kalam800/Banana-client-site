@@ -4,7 +4,7 @@ import BrowstipsCard from "../componets/BrowstipsCard";
 
 const BrowesTips = () => {
   const gardenTips = useLoaderData();
-  console.log(gardenTips);
+ 
 
   return (
     <div>

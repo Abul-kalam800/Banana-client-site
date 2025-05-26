@@ -3,7 +3,7 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-11/12 mx-auto footer sm:footer-horizontal bg-gray-700 text-white p-10">
+    <footer className="w-11/12 mx-auto footer sm:footer-horizontal text-white p-10">
       <nav>
         <h6 className="footer-title">Contact info</h6>
         <p>This site is powerby Abul kalam</p>

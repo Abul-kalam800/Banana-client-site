@@ -20,26 +20,66 @@ const Register = () => {
     const password = formData.get("password");
     console.log(email, password, name, photo);
 
+    if(name.length <5){
+       Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Name Must digit 5 charcter or longer",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        return
+    }
     // password validation
     if (password.length < 8) {
-      alert("Password must be 8 charectors");
+    Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Must inclued at least 8 digit or longer",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       return;
     }
 
     if (!/[A-Z]/.test(password)) {
-      alert("Must include at least one uppercase letter.");
+    Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Must inculed  one uppercase",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       return;
     }
     if (!/[a-z]/.test(password)) {
-      alert("Must include at least one lowercase letter.");
+     Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Must include one lowercse",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       return;
     }
     if (!/[0-9]/.test(password)) {
-      alert("Must include at least one number.");
+       Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Must include al least one nubmer",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       return;
     }
     if (!/[!@#$%^&*]/.test(password)) {
-      alert("Must include at least one special character (!@#$%^&*).");
+       Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Must include one special charector",
+          showConfirmButton: false,
+          timer: 1500,
+        });
     }
 
     // setError(error);
