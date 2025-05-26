@@ -27,6 +27,7 @@ tr{
 
   padding: auto;
   margin: 10px;
+  border-bottom: 2px solid gray;
 }
 tr,td{
 

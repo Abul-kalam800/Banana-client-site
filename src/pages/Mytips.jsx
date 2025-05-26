@@ -1,25 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import Singletips from "../componets/Singletips";
 
 const Mytips = () => {
-  const tipsData = useLoaderData();
-  console.log(tipsData);
+  const tip = useLoaderData();
+ 
+  const [tipsData,setTipsData]=useState(tip)
 
-
+console.log(tip)
   
   return (
-    <div>
-      <h1 className="text-3xl text-center font-semibold mt-5">My Own Tips</h1>
-      <p className="text-xl w-6/12 mx-auto text-center my-5">
+    <div className="w-11/12 mx-auto">
+      <h1 className="md:text-6xl text-center font-semibold mt-5 text-4xl">My Own Tips</h1>
+      <p className="md:w-9/12 mx-auto text-center my-5">
         This page is my own opinion. What you want and what you want to delet
-        from this page .so read kindy and check whice you want keep and updated{" "}
+        from this page .so read kindy and check whice you want keep and updated,This page is you can some new added what is  you know the best option,What we are missing .
       </p>
 
-      <div className="w-11/12 mx-auto ">
-        <table className="w-full mx-auto overflow-x-auto">
+      <div className="my-10">
+        <table className="md:w-full bg-base-300 border">
           <thead className="bg-green-300 h-12">
-            <tr className=" text-xl font-semibold">
+            <tr className="  font-semibold">
               <th>Photo</th>
               <th>Title</th>
               <th>Update</th>
@@ -29,7 +30,7 @@ const Mytips = () => {
           </thead>
             <tbody>
           {tipsData.map((tips) => (
-            <Singletips key={tips._id} tips={tips} ></Singletips>
+            <Singletips key={tips._id} tips={tips}setTipsData={setTipsData}tipsData={tipsData} ></Singletips>
           ))}
         </tbody>
         </table>

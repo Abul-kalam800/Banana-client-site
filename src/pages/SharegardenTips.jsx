@@ -115,7 +115,7 @@ const SharegardenTips = () => {
 
           <input
             type="submit"
-            className="input w-full my-5 rounded-full bg-green-200"
+            className="cursor-pointer input w-full my-5 rounded-full bg-green-200"
             value="Submit"
           />
         </form>

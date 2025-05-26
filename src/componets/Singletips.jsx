@@ -3,13 +3,13 @@ import { MdDelete, MdEditSquare } from "react-icons/md";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
 
-const Singletips = ({ tips }) => {
+const Singletips = ({ tips, setTipsData, tipsData }) => {
   const { _id, photo, title } = tips;
 
   const handleDelet = (id) => {
     Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      text: "You wont to delet!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -22,6 +22,13 @@ const Singletips = ({ tips }) => {
         })
           .then((res) => res.json())
           .then((data) => {
+            if (data.deletedCount) {
+              const remaintData = tipsData.filter(
+                (tipsItem) => tipsItem._id != id
+              );
+              setTipsData(remaintData);
+            }
+
             console.log("after data delet", data);
           });
 
@@ -34,26 +41,27 @@ const Singletips = ({ tips }) => {
     });
     console.log("hello", id);
   };
+
   return (
     <tr className="text-center">
       <td className="text-center">
-        <div className="mask mask-squircle h-20 w-20">
-          <img src={photo} alt="Avatar Tailwind CSS Component" />
+        <div className="mask mask-squircle w-full md:w-40 object-cover">
+          <img src={photo} alt="Avatar Tailwind CSS Component" className="object-center" />
         </div>
       </td>
       <td>
         <p>{title}</p>
       </td>
       <td>
-      <button>
+        <button>
           <Link to={`/updated/${_id}`} className="cursor-pointer text-center">
-          <MdEditSquare size={30}></MdEditSquare>
-        </Link>
-      </button>
+            <MdEditSquare size={24}></MdEditSquare>
+          </Link>
+        </button>
       </td>
       <td>
         <button onClick={() => handleDelet(_id)} className="cursor-pointer">
-          <MdDelete size={30}></MdDelete>
+          <MdDelete size={24}></MdDelete>
         </button>
       </td>
     </tr>

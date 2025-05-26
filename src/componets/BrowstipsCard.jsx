@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router";
 
 const BrowstipsCard = ({ gardentip }) => {
-  const { _id, title, category, photo } = gardentip;
+  
+  const { _id, title, category, photo, selected } = gardentip;
 
   return (
     <tr className="text-center">
       <td className="text-center">
-        <div className="mask mask-squircle h-12 w-12">
+        <div className="mask mask-squircle  md:w-20 object-cover">
           <img src={photo} alt="Avatar Tailwind CSS Component" />
         </div>
       </td>
@@ -17,9 +18,11 @@ const BrowstipsCard = ({ gardentip }) => {
       <td>
         <div>{category}</div>
       </td>
-
       <td>
-        <div  className="rounded-xl bg-green-300 lg:p-4 ">
+        <div>{selected}</div>
+      </td>
+      <td>
+        <div className="rounded-xl bg-green-300 lg:p-4 ">
           <Link to={`/tipdetails/${_id}`}>see more</Link>
         </div>
       </td>

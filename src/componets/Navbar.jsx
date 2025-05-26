@@ -12,16 +12,16 @@ const Navbar = () => {
       <NavLink to="/">
         <li>Home</li>
       </NavLink>
-      <NavLink to='/exploreguarden'>
+      <NavLink to="/exploreguarden">
         <li>Explore Gardeners</li>
       </NavLink>
-      <NavLink to='/browestips'>
+      <NavLink to="/browestips">
         <li>Browse Tips</li>
       </NavLink>
-      <NavLink to='/sharegardentips'>
+      <NavLink to="/sharegardentips">
         <li>Share a Garden Tip</li>
       </NavLink>
-      <NavLink to='/sharetipsall'>
+      <NavLink to="/sharetipsall">
         <li> My-tips</li>
       </NavLink>
     </>
@@ -39,8 +39,8 @@ const Navbar = () => {
     console.log("logout");
   };
   return (
-    <div>
-      <div className="navbar bg-base-100">
+    <div className="bg-green-200 w-full">
+      <div className="navbar ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -62,9 +62,23 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-74 h-74 p-2 shadow mb-10"
             >
-              {links}
+              <NavLink to="/" className="mb-5">
+                <li>Home</li>
+              </NavLink>
+              <NavLink to="/exploreguarden" className="mb-5">
+                <li>Explore Gardeners</li>
+              </NavLink>
+              <NavLink to="/browestips" className="mb-5">
+                <li>Browse Tips</li>
+              </NavLink>
+              <NavLink to="/sharegardentips" className="mb-5">
+                <li>Share a Garden Tip</li>
+              </NavLink>
+              <NavLink to="/sharetipsall" className="mb-5">
+                <li> My-tips</li>
+              </NavLink>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">Banana</a>
@@ -79,13 +93,13 @@ const Navbar = () => {
           <div>
             {user ? (
               <div className="relative group inline-block ">
-              <div>
-                  <img 
-                  className="w-10 bg-red h-10 cursor-pointer"
-                  src={user.photoURL}
-                  alt=""
-                />
-              </div>
+                <div>
+                  <img
+                    className="w-10 bg-red h-10 cursor-pointer"
+                    src={user.photoURL}
+                    alt=""
+                  />
+                </div>
                 <h1
                   className="absolute top-full left-1/2 translate-x-[-50%] mt-2 
                              text-black  rounded  px-2 py-1 font-bold bg-white
