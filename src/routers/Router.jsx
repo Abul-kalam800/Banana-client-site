@@ -12,60 +12,61 @@ import Mytips from "../pages/Mytips";
 import UpdateTips from "../componets/UpdateTips";
 
 export const router = createBrowserRouter([
-    {
-        path:'/',
-        Component:HomeLayout,
-        children:[
-            {
-                path:'/',
-                index:true,
-                  hydrateFallbackElement:<span>Loading......</span>,
-                loader:()=>fetch('http://localhost:3000/profiles'),
-                Component:Home
-            },
-            {
-                path:'/sharegardentips',
-                Component:SharegardenTips
-            },
-            {
-                path:'/exploreguarden',
-                  hydrateFallbackElement:<span>Loading......</span>,
-                loader:()=>fetch('http://localhost:3000/profiles'),
-                Component:Exploregardeners
-            },
-            {
-                path:'/browestips',
-                hydrateFallbackElement:<span>Loading......</span>,
-                loader:()=>fetch('http://localhost:3000/sharetips'),
-                Component:BrowesTips
+  {
+    path: "/",
+    Component: HomeLayout,
+    children: [
+      {
+        path: "/",
+        index: true,
+        hydrateFallbackElement: <span>Loading......</span>,
+        loader: () => fetch("http://localhost:3000/gardenerfeachers"),
+        Component: Home,
+      },
+      {
+        path: "/sharegardentips",
+        Component: SharegardenTips,
+      },
+      {
+        path: "/exploreguarden",
+        hydrateFallbackElement: <span>Loading......</span>,
+        loader: () => fetch("http://localhost:3000/profiles"),
+        Component: Exploregardeners,
+      },
+      {
+        path: "/browestips",
+        hydrateFallbackElement: <span>Loading......</span>,
+        loader: () => fetch("http://localhost:3000/sharetips"),
+        Component: BrowesTips,
+      },
+      {
+        path: "/tipdetails/:id",
+        hydrateFallbackElement: <span>Loading......</span>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/sharetips/${params.id}`),
+        Component: Tipdetails,
+      },
+      {
+        path: "/sharetipsall",
+        hydrateFallbackElement: <span>Loading......</span>,
+        loader: () => fetch("http://localhost:3000/sharetips"),
 
-            },
-            {
-                path:'/tipdetails/:id',
-                 hydrateFallbackElement:<span>Loading......</span>,
-                loader: ({params})=> fetch(`http://localhost:3000/sharetips/${params.id}`),
-                Component:Tipdetails
-            },
-            {
-                path:'/sharetipsall',
-                 hydrateFallbackElement:<span>Loading......</span>,
-                loader: ()=> fetch('http://localhost:3000/sharetips'),
-                
-                Component:Mytips
-            },
-              {
-                path:'/updated/:id',
-                loader:({params})=>fetch(`http://localhost:3000/sharetips/${params.id}`),
-                Component:UpdateTips
-              },
-            {
-                path:'/login',
-                Component:Login
-            },
-            {
-                path:'/register',
-                Component:Register
-            }
-        ]
-    }
- ])
+        Component: Mytips,
+      },
+      {
+        path: "/updated/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/sharetips/${params.id}`),
+        Component: UpdateTips,
+      },
+      {
+        path: "/login",
+        Component: Login,
+      },
+      {
+        path: "/register",
+        Component: Register,
+      },
+    ],
+  },
+]);
