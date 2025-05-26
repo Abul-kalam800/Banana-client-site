@@ -1,7 +1,7 @@
 import React from "react";
 
 const GardenProfile = ({ gardenProfile }) => {
-  console.log(gardenProfile);
+
   const { gardeners_name, status, image, experiences } = gardenProfile;
   
   

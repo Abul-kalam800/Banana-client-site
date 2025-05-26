@@ -1,12 +1,25 @@
-# React + Vite
+# Project: Banana+Gurdenig 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+
+
+Uses  official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project feature 
+- Gurdening trending tips
+- Add shared Features
+- Browes sharde Tips
+- Updated Tips and delet 
+-Login and Resiter page
+-
+
+## Project Description:
+-This projects for about guardenig tips and idea sharde 
+- Shared Tending guardening Tips You can sharde your tips add and delet
+- This website is informetive for gurdenign tips.
+-This website also have login and register page you need to register some pages cannot enter without login.
+

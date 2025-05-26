@@ -11,14 +11,14 @@ const Trendingtips = () => {
         setTrending(data)
       );
   }, []);
-  console.log(trending);
+
   return (
     <div className="w-11/12 mx-auto mt-14">
       <h1 className="text-center font-semibold text-4xl my-14">Trending Tips</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         {
-        trending.map(trendigTip => <TrendingCard trendigTip={trendigTip}></TrendingCard>)
+        trending.map(trendigTip => <TrendingCard key={trendigTip._id} trendigTip={trendigTip}></TrendingCard>)
         }
       </div>
     </div>
