@@ -2,12 +2,15 @@ import React, { use, useState } from "react";
 import { AuthContex } from "../provider/AuthContex";
 import Swal from "sweetalert2";
 import { GoogleAuthProvider } from "firebase/auth";
-import { NavLink } from "react-router";
+import { NavLink, useLocation, useNavigate } from "react-router";
 
 const Register = () => {
   const { error, setError } = useState([]);
   const { creatUser, singinWithgoogle, uptoProfile, user, setUser } =
     use(AuthContex);
+    const navigation =useNavigate()
+    const location = useLocation()
+    
   const googleProvider = new GoogleAuthProvider();
   const handleRegister = (e) => {
     e.preventDefault();
@@ -96,18 +99,25 @@ const Register = () => {
           .then(() => {
             const userProfile = { ...user, displayName: name, photoURL: photo };
             setUser(userProfile);
+            console.log(location)
+          
+            navigation(`${ location.state? location.state:'/'}`)
+          Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your successfully registerd",
+          showConfirmButton: false,
+        
+          timer: 1500,
+        });
+
           })
           .catch((error) => {
             console.log(error);
           });
         // aleart successfully
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Your successfully registerd",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+    
+
       })
       .catch((error) => {
         console.log(error.message);

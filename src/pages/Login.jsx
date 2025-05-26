@@ -2,11 +2,12 @@ import React, { use } from "react";
 import { AuthContex } from "../provider/AuthContex";
 import Swal from "sweetalert2";
 import { GoogleAuthProvider } from "firebase/auth";
-import { NavLink } from "react-router";
+import { NavLink, useLocation, useNavigate } from "react-router";
 import { Navigate } from "react-router";
 
 const Login = () => {
-  
+ const location = useLocation() 
+ const navigation = useNavigate()
   const { signinUser, singinWithgoogle } = use(AuthContex);
   const providerGoogle = new GoogleAuthProvider
   const handleLogin = (e) => {
@@ -20,7 +21,7 @@ const Login = () => {
     signinUser(email, password)
       .then((result) => {
         console.log(result.user);
-      Navigate('/')
+        navigation(`${location.state?location.state:'/'}`)
         Swal.fire({
           position: "top-end",
           icon: "success",

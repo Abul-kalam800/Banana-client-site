@@ -12,12 +12,13 @@ import Mytips from "../pages/Mytips";
 import UpdateTips from "../componets/UpdateTips";
 import Page404 from "../pages/Page404";
 import Loading from "../pages/Loading";
+import PrivetRouter from "../PrivetRouter/PrivetRouter";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: HomeLayout,
-    errorElement: Page404,
+    errorElement: <Page404></Page404>,
     children: [
       {
         path: "/",
@@ -47,21 +48,21 @@ export const router = createBrowserRouter([
         hydrateFallbackElement: <Loading></Loading>,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/sharetips/${params.id}`),
-        Component: Tipdetails,
+        element:<PrivetRouter><Tipdetails></Tipdetails></PrivetRouter>,
       },
       {
         path: "/sharetipsall",
         hydrateFallbackElement: <Loading></Loading>,
         loader: () => fetch("http://localhost:3000/sharetips"),
 
-        Component: Mytips,
+        element:<PrivetRouter><Mytips></Mytips></PrivetRouter>,
       },
       {
         path: "/updated/:id",
         hydrateFallbackElement: <Loading></Loading>,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/sharetips/${params.id}`),
-        Component: UpdateTips,
+       element:<PrivetRouter><UpdateTips></UpdateTips></PrivetRouter>
       },
       {
         path: "/login",

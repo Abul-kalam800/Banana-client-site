@@ -18,9 +18,9 @@ const BrowesTips = () => {
   console.log(search);
   return (
     <div>
-      <h1 className="text-center text-6xl font-semibold">Browes tips</h1>
+      <h1 className="text-center text-6xl font-semibold mt-20">Browes tips</h1>
 
-      <div className=" w-11/12  mx-auto my-20 ">
+      <div className=" w-11/12  mx-auto mt-20 ">
         <div className="w-9/12 mx-auto ">
           <input
             type=" text"
