@@ -46,7 +46,7 @@ const Navbar = () => {
     console.log("logout");
   };
   return (
-    <div className="bg-green-200 w-full">
+    <div className="bg-primary w-full">
       <div className="navbar ">
         <div className="navbar-start">
           <div className="dropdown">

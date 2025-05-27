@@ -2,7 +2,7 @@ import React from "react";
 import { PiClipboard } from "react-icons/pi";
 
 const Gardenar = ({ gardener }) => {
-  console.log(gardener);
+
   return (
     <div className="p-5 bg-green-200 rounded-2xl ">
       <div className=" h-50 rounded-2xl mb-5 bg-red-200  object-center object-cover">

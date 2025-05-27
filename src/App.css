@@ -1,18 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @import "tailwindcss";
-@plugin "daisyui" {
-  themes: light --default;
-}
+@plugin "daisyui" ;
 
-@plugin "daisyui/theme" {
+
+ /* @plugin "daisyui/theme" {
   name: "light";
   default: true;
   --color-primary: blue;
   --color-secondary: teal;
+}  */
+
+
+.light-them{
+--color-primary:#FFFFFF ;
+ --btn-bg-color:#00D3BB;
+ --color-heading:#084D49;
+ 	--color-text:#000C07;
+ 	--color-base-300:#EEEEEE;
+}
+.light{
+  background-color: #ffffff;
+  color:#000C07;
+  
+}
+.dark-them{
+ --color-accent:#1D232A ;
+ --color-primary:#1FB854;
+ --color-secondary:#000C07;
+ 	--color-base-200:#F8F8F8;
+ 	--color-base-300:#EEEEEE;
 }
 
-*{
+*
+{
   font-family: "Fira Sans", sans-serif;
 }
 

@@ -6,9 +6,9 @@ const BrowesTips = () => {
   const gardenTips = useLoaderData();
 
   const [search, setSearch] = useState("");
-  const [filterData, setFilterData] = useState();
+  const [filterData, setFilterData] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3000/sharetipsfilter?filterParams=${search}`)
+    fetch(`http://localhost:3000/sharetipsfilter?searchParamss=${search}`)
       .then((res) => res.json())
       .then((data) => setFilterData(data));
     console.log("kalam");
@@ -20,12 +20,12 @@ const BrowesTips = () => {
     <div>
       <h1 className="text-center text-6xl font-semibold mt-20">Browes tips</h1>
 
-      <div className=" w-11/12  mx-auto mt-20 ">
+      <div className=" w-11/12  mx-auto mt-10 ">
         <div className="w-9/12 mx-auto ">
           <input
             type=" text"
             name="search"
-            className="mb-9 border-2 p-3 rounded-2xl "
+            className="mb-2 w-full border-2 p-3 rounded-2xl"
             placeholder="search"
             onChange={(e) => setSearch(e.target.value)}
           />
