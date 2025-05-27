@@ -4,6 +4,7 @@ import FechersGurdeners from "../componets/FechersGurdeners";
 import Trendingtips from "../componets/Trendingtips";
 import { useLoaderData } from "react-router";
 import Gallery from "../componets/Gallery";
+import Review from "../componets/Review";
 
 const Home = () => {
   const fethersGardeners = useLoaderData();
@@ -14,6 +15,7 @@ const Home = () => {
       <FechersGurdeners fethersGardeners={fethersGardeners}></FechersGurdeners>
     <Trendingtips></Trendingtips>
     <Gallery></Gallery>
+    <Review></Review>
     </div>
   );
 };
