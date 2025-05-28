@@ -35,7 +35,7 @@ const BrowesTips = () => {
             type=" text"
             name="search"
             className="mb-2 w-full border-2 p-3 rounded-2xl"
-            placeholder="search"
+            placeholder="search only Difficulty level"
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>

@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import Singletips from "../componets/Singletips";
 import { useTypewriter } from "react-simple-typewriter";
+import TipsAdd from "../componets/TipsAdd";
 
 const Mytips = () => {
   const tip = useLoaderData();
  
   const [tipsData,setTipsData]=useState(tip)
+ 
 
-
+  if(tipsData.length <1){
+    return <TipsAdd></TipsAdd>
+  }
    const [text] = useTypewriter({
     words: ['Tips'],
     loop: 0,

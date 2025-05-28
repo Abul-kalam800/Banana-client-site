@@ -1,9 +1,15 @@
 import React from "react";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import logo from '../assets/logob.png'
 
 const Footer = () => {
   return (
     <footer className="w-11/12 mx-auto footer sm:footer-horizontal text-white p-10">
+    <div>
+        <a href="/">
+      <img src={logo} alt="logo"  className="w-20"/>
+      </a>
+    </div>
       <nav>
         <h6 className="footer-title">Contact info</h6>
         <p>This site is powerby Abul kalam</p>

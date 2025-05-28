@@ -121,7 +121,7 @@ const SharegardenTips = () => {
                 type="email"
                 name="email"
                 className="input w-full"
-                placeholder={user.email}
+                placeholder={user? user.email:''}
                 readOnly
               />
             </fieldset>
