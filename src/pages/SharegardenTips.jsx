@@ -10,9 +10,9 @@ const SharegardenTips = () => {
     const form = e.target;
     const formData = new FormData(form);
     const gardenData = Object.fromEntries(formData.entries());
-    console.log(gardenData);
+   
 
-    fetch("http://localhost:3000/sharetips", {
+    fetch("https://banana-server-delta.vercel.app/sharetips", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
         path: "/",
         index: true,
         hydrateFallbackElement: <Loading></Loading>,
-        loader: () => fetch("http://localhost:3000/gardenerfeachers"),
+        loader: () => fetch("https://banana-server-delta.vercel.app/gardenerfeachers"),
         Component: Home,
       },
       {
@@ -34,26 +34,26 @@ export const router = createBrowserRouter([
       {
         path: "/exploreguarden",
         hydrateFallbackElement: <Loading></Loading>,
-        loader: () => fetch("http://localhost:3000/profiles"),
+        loader: () => fetch("https://banana-server-delta.vercel.app/profiles"),
         Component: Exploregardeners,
       },
       {
         path: "/browestips",
         hydrateFallbackElement: <Loading></Loading>,
-        // loader: () => fetch("http://localhost:3000/sharetipsfilter"),
+        // loader: () => fetch("https://banana-server-delta.vercel.app/sharetipsfilter"),
         Component: BrowesTips,
       },
       {
         path: "/tipdetails/:id",
         hydrateFallbackElement: <Loading></Loading>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/sharetips/${params.id}`),
+          fetch(`https://banana-server-delta.vercel.app/sharetips/${params.id}`),
         element:<PrivetRouter><Tipdetails></Tipdetails></PrivetRouter>,
       },
       {
         path: "/sharetipsall",
         hydrateFallbackElement: <Loading></Loading>,
-        loader: () => fetch("http://localhost:3000/sharetips"),
+        loader: () => fetch("https://banana-server-delta.vercel.app/sharetips"),
 
         element:<PrivetRouter><Mytips></Mytips></PrivetRouter>,
       },
@@ -61,7 +61,7 @@ export const router = createBrowserRouter([
         path: "/updated/:id",
         hydrateFallbackElement: <Loading></Loading>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/sharetips/${params.id}`),
+          fetch(`https://banana-server-delta.vercel.app/sharetips/${params.id}`),
        element:<PrivetRouter><UpdateTips></UpdateTips></PrivetRouter>
       },
       {

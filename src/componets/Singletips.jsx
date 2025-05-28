@@ -17,7 +17,7 @@ const Singletips = ({ tips, setTipsData, tipsData }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/sharetips/${id}`, {
+        fetch(`https://banana-server-delta.vercel.app/sharetips/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

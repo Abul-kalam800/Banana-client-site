@@ -23,7 +23,7 @@ const UpdateTips = () => {
     const formData = new FormData(form);
     const updateTips = Object.fromEntries(formData.entries());
     console.log(updateTips);
-    fetch(`http://localhost:3000/sharetips/${_id}`, {
+    fetch(`https://banana-server-delta.vercel.app/sharetips/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

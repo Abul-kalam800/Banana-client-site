@@ -4,7 +4,7 @@ import TrendingCard from "./TrendingCard";
 const Trendingtips = () => {
   const [trending, setTrending] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/trendingtips")
+    fetch("https://banana-server-delta.vercel.app/trendingtips")
       .then((res) => res.json())
       .then((data) =>
         //      console.log(data)

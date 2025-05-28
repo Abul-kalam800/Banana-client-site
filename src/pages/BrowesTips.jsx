@@ -9,7 +9,7 @@ const BrowesTips = () => {
   const [search, setSearch] = useState("");
   const [filterData, setFilterData] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3000/sharetipsfilter?searchParams=${search}`)
+    fetch(`https://banana-server-delta.vercel.app/sharetipsfilter?searchParams=${search}`)
       .then((res) => res.json())
       .then((data) => setFilterData(data));
   }, [search]);
