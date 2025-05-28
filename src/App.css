@@ -37,3 +37,12 @@ th,td{
 flex-wrap:nowrap;
 padding: 10px;
 }
+.error{
+  background-image: url('../src/assets/errorpage.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+ 
+ 
+
+}
