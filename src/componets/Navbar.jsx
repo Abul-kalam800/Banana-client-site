@@ -1,9 +1,13 @@
-import React, { use, useContext } from "react";
+import React, { use, useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContex } from "../provider/AuthContex";
 import userImg from "../assets/usser.png";
 import { signOut } from "firebase/auth";
 import { auth } from "../Firebase/firebaseConfig";
+import { FiSun } from "react-icons/fi";
+import { FaMoon } from "react-icons/fa";
+import logo from "../assets/logob.png"
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user } = useContext(AuthContex);
@@ -26,19 +30,36 @@ const Navbar = () => {
       </NavLink>
     </>
   );
+  const [show, setShow] = useState(false);
+  const [theme, setTheme] = useState("light");
 
-  console.log(user);
+  const toogleBtn = () => {
+    if (show) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  };
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+    setShow(show == true ? false : true);
+  };
+
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
-           Swal.fire({
-                 position: "top-end",
-                 icon: "success",
-                 title: "Your successfully Logout",
-                 showConfirmButton: false,
-               
-                 timer: 1500,
-               }); 
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your successfully Logout",
+          showConfirmButton: false,
+
+          timer: 1500,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -46,14 +67,14 @@ const Navbar = () => {
     console.log("logout");
   };
   return (
-    <div className="bg-primary w-full">
+    <div className="bg-blue-400  w-full mt-4">
       <div className="navbar ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-8 w-8"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -88,7 +109,10 @@ const Navbar = () => {
               </NavLink>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Banana</a>
+
+          <a href=""> 
+            <img src={logo} className="w-14"/>
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 flex gap-6 items-center font-semibold">
@@ -96,7 +120,11 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="navbar-end flex gap-5">
+        <div className="navbar-end flex gap-5 ">
+          <button onClick={toggleTheme} className="cursor-pointer" data-tooltip-id="my-tooltop" data-tooltip-content='Dark and light mood'>
+            {show ? <FiSun size={34} /> : <FaMoon size={34} />}
+          </button>
+          <Tooltip id="my-tooltop"></Tooltip>
           <div>
             {user ? (
               <div className="relative group inline-block ">
@@ -129,7 +157,7 @@ const Navbar = () => {
               <Link to="/login" className="btn">
                 Login
               </Link>
-              <Link to="/register" className="btn">
+              <Link to="/register" className="btn hidden md:flex">
                 Register
               </Link>
             </>

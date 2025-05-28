@@ -8,7 +8,7 @@ const BrowstipsCard = ({ gardentip }) => {
   return (
     <tr className="text-center">
       <td className="text-center">
-        <div className="rounded-full bg-red-200 md:w-20 object-cover mx-auto">
+        <div className="rounded-full bg-red-200 md:w-30 object-cover mx-auto">
           <img src={photo} alt="Avatar" />
         </div>
       </td>
@@ -22,7 +22,7 @@ const BrowstipsCard = ({ gardentip }) => {
         <div>{selected}</div>
       </td>
       <td>
-        <div className="rounded-xl bg-green-300 lg:p-2 ">
+        <div className="rounded-xl bg-green-600 lg:p-2 ">
           <Link to={`/tipdetails/${_id}`}>see more</Link>
         </div>
       </td>

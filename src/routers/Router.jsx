@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
       {
         path: "/browestips",
         hydrateFallbackElement: <Loading></Loading>,
-        loader: () => fetch("http://localhost:3000/sharetipsfilter"),
+        // loader: () => fetch("http://localhost:3000/sharetipsfilter"),
         Component: BrowesTips,
       },
       {

@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContex } from "../provider/AuthContex";
+import { useTypewriter } from "react-simple-typewriter";
 
 const SharegardenTips = () => {
+  const {user}=useContext(AuthContex)
   const handleFrom = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -32,10 +35,17 @@ const SharegardenTips = () => {
       });
   };
 
+   const [text] = useTypewriter({
+    words: ['Garden'],
+    loop: 0,
+     typeSpeed:70,
+      deleteSpeed:50,
+       delaySpeed:1000,
+  })
   return (
     <div className="w-11/12 mx-auto md:p-20">
-      <h1 className="text-3xl md:text-6xl font-semibold text-center">
-        Share gardern trilps{" "}
+      <h1 className="text-3xl md:text-6xl font-semibold text-center mb-5">
+        Share <span className="text-green-500">{text}</span> trips
       </h1>
 
       <div>
@@ -48,6 +58,7 @@ const SharegardenTips = () => {
                 name="title"
                 className="input w-full"
                 placeholder="Title"
+                required
               />
             </fieldset>
             <fieldset className="fieldset">
@@ -57,6 +68,7 @@ const SharegardenTips = () => {
                 name="plant"
                 className="input w-full"
                 placeholder=" Plant Type/Topic"
+                required
               />
             </fieldset>
             <fieldset className="fieldset">
@@ -75,6 +87,7 @@ const SharegardenTips = () => {
                 name="Description"
                 className="input w-full"
                 placeholder="Type here"
+                required
               />
             </fieldset>
             <fieldset className="fieldset">
@@ -99,15 +112,16 @@ const SharegardenTips = () => {
                 name="photo"
                 className="input w-full "
                 placeholder="Images url"
+                required
               />
             </fieldset>
             <fieldset>
-              <label className="label">Email & name</label>
+              <label className="label">Email</label>
               <input
                 type="email"
                 name="email"
                 className="input w-full"
-                placeholder="Email & Name"
+                placeholder={user.email}
                 readOnly
               />
             </fieldset>
@@ -115,7 +129,7 @@ const SharegardenTips = () => {
 
           <input
             type="submit"
-            className="cursor-pointer input w-full my-5 rounded-full bg-green-200"
+            className="cursor-pointer input w-full my-5 rounded-full bg-green-600"
             value="Submit"
           />
         </form>

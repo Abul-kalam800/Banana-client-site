@@ -74,9 +74,7 @@ const Review = () => {
             </div>
 
             <p>
-              This site gardener tips is very good sevices is very professonial
-              I am so happy work with them .so you can join this site for your
-              bujness
+              It is amazing for me , This is absultly professnality garden tips .I give them good advise and take also good advise.
             </p>
           </div>
           <div className="mt-10 flex justify-end">
@@ -104,9 +102,7 @@ const Review = () => {
             </div>
 
             <p>
-              This site gardener tips is very good sevices is very professonial
-              I am so happy work with them .so you can join this site for your
-              bujness
+              Very nice for me I like this decoration and tips ,Design your profiles looking like so much good . I will come again your garden this is so good for me.
             </p>
           </div>
           <div className="mt-10 flex justify-end">

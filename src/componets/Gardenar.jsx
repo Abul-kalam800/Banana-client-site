@@ -4,7 +4,7 @@ import { PiClipboard } from "react-icons/pi";
 const Gardenar = ({ gardener }) => {
 
   return (
-    <div className="p-5 bg-green-200 rounded-2xl ">
+    <div className="p-5 bg-green-400 rounded-2xl ">
       <div className=" h-50 rounded-2xl mb-5 bg-red-200  object-center object-cover">
         <img src={gardener.image} alt="imge" className="object-cover h-full w-full rounded-2xl " />
       </div>

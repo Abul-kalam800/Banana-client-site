@@ -1,8 +1,10 @@
-import React from "react";
+import React, { use } from "react";
 import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
+import { AuthContex } from "../provider/AuthContex";
 
 const UpdateTips = () => {
+  const {user}=use(AuthContex)
   const tipsData = useLoaderData();
   const {
     _id,
@@ -128,12 +130,12 @@ const UpdateTips = () => {
               />
             </fieldset>
             <fieldset>
-              <label className="label">Email & name</label>
+              <label className="label">Email</label>
               <input
                 type="email"
                 name="email"
                 className="input w-full"
-                placeholder="Email & Name"
+                placeholder={user.email}
                 readOnly
               />
             </fieldset>
@@ -141,7 +143,7 @@ const UpdateTips = () => {
 
           <input
             type="submit"
-            className="input w-full my-5 rounded-full bg-green-200 cursor-pointer"
+            className="input w-full my-5 rounded-full bg-green-400 cursor-pointer"
             value="Update"
           />
         </form>
