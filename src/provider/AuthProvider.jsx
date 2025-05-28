@@ -38,7 +38,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const subcrib = onAuthStateChanged(auth, (currentUser) => {
-      console.log(currentUser);
+     
       setUser(currentUser);
       setLoading(false);
     });

@@ -149,7 +149,7 @@ const Navbar = () => {
             )}
           </div>
           {user ? (
-            <button className="cursor-pointer" onClick={handleLogout}>
+            <button className="cursor-pointer bg-green-600 p-2 font-semibold" onClick={handleLogout}>
               Logout
             </button>
           ) : (
