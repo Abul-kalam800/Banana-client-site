@@ -36,6 +36,7 @@ Uses  official plugins are available:
 -  Shared Tending guardening Tips You can sharde your tips add and delet
 -  This website is informetive for gurdenign tips.
 -  This website also have login and register page you need to register some pages cannot enter without login.
+- This projects help you plese give  review about this projec
 
 ## Live Link
 [Banana-garden](https://banana-garden-b6fe3.web.app/)
